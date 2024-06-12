@@ -28,4 +28,19 @@ describe("Form", () => {
 
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  it('should a render a button with text "Submit"', () => {
+    const wrapper = mount(Form);
+    expect(wrapper.get("button").text()).toBe("Enviar");
+  });
+
+  it('should a render is a checkbox with id "checkboxOne"', () => {
+    const wrapper = mount(Form);
+    expect(wrapper.get("#checkboxOne").exists()).toBe(true);
+  });
+
+  it('should a render a function "submitForm"', () => {
+    const wrapper = mount(Form);
+    expect(typeof wrapper.vm.submitForm).toBe("function");
+  });
 });
